@@ -10,6 +10,7 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
+  setup:
       - run:
           name: Front-End Install 
           command: |
@@ -18,6 +19,7 @@ jobs:
           name: Back-End Install
           command: |
             npm run backend:install
+  test:
       - run:
           name: Front-End test 
           command: |
@@ -26,6 +28,7 @@ jobs:
           name: Back-End test
           command: |
             npm run backend:test
+  buildapp:
       - run:
           name: Front-End Build
           command: |
@@ -34,18 +37,23 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
+  deploy:
       - run:
           name: Deploy App
           command: |
             npm run frontend:deploy
 workflows:
     jobs:
+      -build:
+
       - install:
-            filters:  
-              branches:
-                only: 
-                  - main
-                  - master
+          requires:
+            - install
+          filters:  
+            branches:
+              only: 
+                - main
+                - master
       - test:
           requires:
             - install
@@ -54,7 +62,7 @@ workflows:
               only: 
                 - main
                 - master
-      - build:
+      - buildapp:
           requires:
             - test
           filters:  
