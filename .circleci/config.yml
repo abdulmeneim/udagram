@@ -70,7 +70,7 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - test:
+      - test
       - build:
           filters:
             branches:
