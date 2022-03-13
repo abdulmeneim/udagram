@@ -16,9 +16,7 @@ jobs:
           command: echo ${CIRCLE_BRANCH}
       # Restore local dependencies from cache
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-            - v1-dependencies-
+          keys: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
       # Install project dependencies
       - run:
           name: Install local dependencies
