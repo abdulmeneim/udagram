@@ -17,7 +17,7 @@ jobs:
       # Restore local dependencies from cache
       #- restore_cache:
       - restore_cache:
-          key: ~/udagram-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: ~/udagram/udagram-frontent-{{ .Branch }}-{{ checksum "package-lock.json" }}
       # Install project dependencies
       - run:
           name: Install local dependencies
