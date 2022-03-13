@@ -10,70 +10,39 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
-  setup:
-    - run:
+      - run:
         name: Front-End Install
         command: |
           npm run frontend:install
-    - run:
+      - run:
         name: Back-End Install
         command: |
           npm run backend:install
-  test:
-    - run:
+      - run:
         name: Front-End test
         command: |
           npm run frontend:test
-    - run:
+      - run:
         name: Back-End test
         command: |
           npm run backend:test
-  buildapp:
-    - run:
+      - run:
         name: Front-End Build
         command: |
           npm run frontend:build
-    - run:
+      - run:
         name: Back-End Build
         command: |
           npm run backend:build
-  deploy:
-    - run:
+      - run:
         name: Deploy App
         command: |
           npm run frontend:deploy
 workflows:
   jobs:
     - build:
-    - install:
-        requires:
-          - build
-        filters:
-          branches:
-            only:
-              - main
-              - master
-    - test:
-        requires:
-          - install
-        filters:
-          branches:
-            only:
-              - main
-              - master
-    - buildapp:
-        requires:
-          - test
-        filters:
-          branches:
-            only:
-              - main
-              - master
-    - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only:
-              - main
-              - master
+      filters:
+        branches:
+          only:
+            - main
+            - master
