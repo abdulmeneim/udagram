@@ -44,36 +44,36 @@ jobs:
           npm run frontend:deploy
 workflows:
   jobs:
-    -build:
-      - install:
-          requires:
-            - install
-          filters:
-            branches:
-              only:
-                - main
-                - master
-      - test:
-          requires:
-            - install
-          filters:
-            branches:
-              only:
-                - main
-                - master
-      - buildapp:
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - main
-                - master
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only:
-                - main
-                - master
+    - build:
+    - install:
+        requires:
+          - build
+        filters:
+          branches:
+            only:
+              - main
+              - master
+    - test:
+        requires:
+          - install
+        filters:
+          branches:
+            only:
+              - main
+              - master
+    - buildapp:
+        requires:
+          - test
+        filters:
+          branches:
+            only:
+              - main
+              - master
+    - deploy:
+        requires:
+          - build
+        filters:
+          branches:
+            only:
+              - main
+              - master
