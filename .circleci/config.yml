@@ -41,7 +41,7 @@ jobs:
 workflows:
     jobs:
       - install
-        filters:  
+          filters:  
             branches:
               only: 
                 - main
