@@ -6,6 +6,8 @@ jobs:
   build:
     docker:
       - image: "cimg/base:stable"
+        apt-get install -y google-chrome-stable xvfb
+        npm i -g @angular/cli
     steps:
       - node/install
       - checkout
