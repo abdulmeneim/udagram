@@ -4,7 +4,7 @@ orbs:
   aws-cli: circleci/aws-cli@1.3.1
 jobs:
   test:
-    working_directory: ~/project-name
+    working_directory: ~/udagram
     docker:
       - image: circleci/node:10-browsers
     steps:
@@ -16,9 +16,11 @@ jobs:
           command: echo ${CIRCLE_BRANCH}
       # Restore local dependencies from cache
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-            - v1-dependencies-
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+
+          # keys:
+          #   - v1-dependencies-{{ checksum "package-lock.json" }}
+          #   - v1-dependencies-
       # Install project dependencies
       - run:
           name: Install local dependencies
@@ -72,6 +74,8 @@ workflows:
     jobs:
       - test
       - build:
+          requires:
+            - test2
           filters:
             branches:
               only:
