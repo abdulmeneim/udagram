@@ -19,7 +19,6 @@ jobs:
           # key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
-            - v1-dependencies-
       # Install project dependencies
       - run:
           name: Install local dependencies
