@@ -16,7 +16,7 @@ jobs:
           command: echo ${my-project}
       # Restore local dependencies from cache
       - restore_cache:
-          key: { { checksum "package-lock.json" } }
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           # keys:
           #   - v1-dependencies-{{ checksum "package-lock.json" }}
           #   - v1-dependencies-
