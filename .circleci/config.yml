@@ -75,7 +75,7 @@ workflows:
       - test
       - build:
           requires:
-            - test2
+            - test
           filters:
             branches:
               only:
