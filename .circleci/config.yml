@@ -17,14 +17,14 @@ jobs:
       # Restore local dependencies from cache
       #- restore_cache:
       - restore_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: udagram/udagram-frontend-{{ .Branch }}-{{ checksum "package-lock.json" }}
       # Install project dependencies
       - run:
           name: Install local dependencies
           command: npm install
       # Cache local dependencies if they don't exist
       - save_cache:
-          key: my-project-{{ checksum "package-lock.json" }}
+          key: udagram/udagram-frontend-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
       # # Lint the source code
