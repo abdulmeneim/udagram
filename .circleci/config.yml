@@ -41,11 +41,11 @@ jobs:
 workflows:
     jobs:
       - install
-          filters:  
-            branches:
-              only: 
-                - main
-                - master
+            filters:  
+              branches:
+                only: 
+                  - main
+                  - master
       - test:
           requires:
             - install
