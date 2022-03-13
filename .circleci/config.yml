@@ -11,70 +11,69 @@ jobs:
       - checkout
       - aws-cli/setup
   setup:
-      - run:
-          name: Front-End Install 
-          command: |
-            npm run frontend:install 
-      - run:
-          name: Back-End Install
-          command: |
-            npm run backend:install
+    - run:
+        name: Front-End Install
+        command: |
+          npm run frontend:install
+    - run:
+        name: Back-End Install
+        command: |
+          npm run backend:install
   test:
-      - run:
-          name: Front-End test 
-          command: |
-            npm run frontend:test 
-      - run:
-          name: Back-End test
-          command: |
-            npm run backend:test
+    - run:
+        name: Front-End test
+        command: |
+          npm run frontend:test
+    - run:
+        name: Back-End test
+        command: |
+          npm run backend:test
   buildapp:
-      - run:
-          name: Front-End Build
-          command: |
-            npm run frontend:build
-      - run:
-          name: Back-End Build
-          command: |
-            npm run backend:build
+    - run:
+        name: Front-End Build
+        command: |
+          npm run frontend:build
+    - run:
+        name: Back-End Build
+        command: |
+          npm run backend:build
   deploy:
-      - run:
-          name: Deploy App
-          command: |
-            npm run frontend:deploy
+    - run:
+        name: Deploy App
+        command: |
+          npm run frontend:deploy
 workflows:
-    jobs:
-      -build:
-
+  jobs:
+    -build:
       - install:
           requires:
             - install
-          filters:  
+          filters:
             branches:
-              only: 
+              only:
                 - main
                 - master
       - test:
           requires:
             - install
-          filters:  
+          filters:
             branches:
-              only: 
+              only:
                 - main
                 - master
       - buildapp:
           requires:
             - test
-          filters:  
+          filters:
             branches:
-              only: 
+              only:
                 - main
                 - master
       - deploy:
           requires:
             - build
-          filters:  
+          filters:
             branches:
-              only: 
+              only:
                 - main
                 - master
