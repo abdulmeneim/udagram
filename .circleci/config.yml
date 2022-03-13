@@ -19,6 +19,14 @@ jobs:
           command: |
             npm run backend:install
       - run:
+          name: Front-End test 
+          command: |
+            npm run frontend:test 
+      - run:
+          name: Back-End test
+          command: |
+            npm run backend:test
+      - run:
           name: Front-End Build
           command: |
             npm run frontend:build
@@ -30,3 +38,35 @@ jobs:
           name: Deploy App
           command: |
             npm run frontend:deploy
+workflows:
+    jobs:
+      - install
+        filters:  
+            branches:
+              only: 
+                - main
+                - master
+      - test:
+          requires:
+            - install
+          filters:  
+            branches:
+              only: 
+                - main
+                - master
+      - build:
+          requires:
+            - test
+          filters:  
+            branches:
+              only: 
+                - main
+                - master
+      - deploy:
+          requires:
+            - build
+          filters:  
+            branches:
+              only: 
+                - main
+                - master
