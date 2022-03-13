@@ -34,7 +34,8 @@ jobs:
       # Test the source code
       - run:
           name: Testing
-          command: npm run frontend:unittest -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+          command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+          # command: npm run frontend:unittest -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       # End to End test
       - run:
           name: End to End Test
