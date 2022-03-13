@@ -40,7 +40,7 @@ jobs:
             npm run frontend:deploy
 workflows:
     jobs:
-      - install
+      - install:
             filters:  
               branches:
                 only: 
