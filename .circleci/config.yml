@@ -6,7 +6,7 @@ jobs:
   test:
     working_directory: ~/udagram
     docker:
-      - image: circleci/node:20-browsers
+      - image: circleci/node:17-browsers
     steps:
       # Checkout the code from the branch into the working_directory
       - checkout
