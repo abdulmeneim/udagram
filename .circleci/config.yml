@@ -67,11 +67,10 @@ jobs:
           name: Deploy back-end App
           command: |
             npm run backend:deploy
-      - run:
-          name: Deploy frontend-App
-          command: |
-
-          #   npm run frontend:deploy
+      # - run:
+      #     name: Deploy frontend-App
+      #     command: |
+      #       #npm run frontend:deploy
 workflows:
   udagram:
     jobs:
