@@ -7,12 +7,12 @@ jobs:
   test:
     working_directory: ~/udagram
     docker:
-      - image: circleci/node:10-browsers
+      - image: "cimg/node:13.12-browsers"
     steps:
       # Checkout the code from the branch into the working_directory
       - checkout
-      - browser-tools/install-browser-tools:
-          chrome-version: 99.0.4844.51
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       # Restore local dependencies from cache
       #- restore_cache:
       - restore_cache:
