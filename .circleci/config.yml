@@ -84,12 +84,12 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - test:
-          filters:
-            branches:
-              only:
-                - main
-                - master
+      # - test:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - main
+      #           - master
       - build:
           requires:
             - test
