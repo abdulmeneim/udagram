@@ -77,10 +77,10 @@ jobs:
       #     name: Deploying
       #     command: |
       #       eb deploy $CIRCLE_BRANCH-my-application
-      - run:
-          name: Deploy back-end App
-          command: |
-            npm run backend:deploy
+      # - run:
+      #     name: Deploy back-end App
+      #     command: |
+      #       npm run backend:deploy
       - run:
           name: Deploy frontend-App
           command: |
