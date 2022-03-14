@@ -6,7 +6,7 @@ orbs:
 jobs:
   test:
     docker:
-      - image: circleci/node:14-browsers
+      - image: circleci/node:16-browsers
     working_directory: ~/udagram
     # docker:
     #   - image: circleci/node:14
@@ -22,7 +22,6 @@ jobs:
             firefox --version
             geckodriver --version
             chromedriver --version
-            java -jar /usr/local/bin/selenium.jar --version
           name: Check install
       # Restore local dependencies from cache
       #- restore_cache:
