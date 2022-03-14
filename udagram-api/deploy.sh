@@ -11,6 +11,5 @@ eb setenv AWS_PROFILE=$AWS_PROFILE
 eb setenv URL=$URL
 eb setenv JWT_SECRET=$JWT_SECRET
 
-eb deploy 
 eb health
 
