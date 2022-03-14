@@ -32,9 +32,9 @@ jobs:
           name: Testing
           command: npm run frontend:unittest -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       # End to End test
-      - run:
-          name: End to End Test
-          command: npm run frontend:e2etest  --protractor-config=e2e/protractor.conf.js
+      # - run:
+      #     name: End to End Test
+      #     command: npm run frontend:e2etest  --protractor-config=e2e/protractor.conf.js
   build:
     docker:
       - image: "cimg/base:stable"
