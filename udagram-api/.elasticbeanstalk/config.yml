@@ -1,0 +1,14 @@
+branch-defaults:
+  default:
+    environment: Project3api-env
+environment-defaults:
+  Project3api-env:
+    branch: null
+    repository: null
+global:
+  application_name: project-3-api
+  default_ec2_keyname: null
+  default_platform: Node.js 16 running on 64bit Amazon Linux 2
+  default_region: us-east-1
+  sc: git
+  workspace_type: Application
