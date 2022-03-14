@@ -3,11 +3,9 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "target": "es5",
-    "types": [
-      "jasmine",
-      "jasminewd2",
-      "node"
-    ]
+    "types": ["jasmine", "jasminewd2", "node"]
   }
 }
