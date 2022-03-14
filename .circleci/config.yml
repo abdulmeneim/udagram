@@ -72,7 +72,9 @@ jobs:
       - run:
           name: Back-End Build
           command: |
-            npm run backend:build
+            cd udagran-api
+            eb deploy Project3api-env
+            eb health
       # - run:
       #     name: Deploying
       #     command: |
