@@ -5,10 +5,10 @@ orbs:
   browser-tools: circleci/browser-tools@1.2.4
 jobs:
   test:
+    executor: browser-tools/default
     working_directory: ~/udagram
     # docker:
     #   - image: circleci/node:14
-    executor: browser-tools/default
     steps:
       # Checkout the code from the branch into the working_directory
       - checkout
