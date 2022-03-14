@@ -5,7 +5,8 @@ orbs:
   browser-tools: circleci/browser-tools@1.2.4
 jobs:
   test:
-    - image: 'cimg/node:13.12-browsers'
+    docker:
+      - image: "cimg/node:13.12-browsers"
     working_directory: ~/udagram
     # docker:
     #   - image: circleci/node:14
