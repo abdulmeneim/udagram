@@ -65,7 +65,12 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - test
+      - test:
+          filters:
+            branches:
+              only:
+                - main
+                - master
       - build:
           requires:
             - test
