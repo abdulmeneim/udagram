@@ -34,7 +34,7 @@ jobs:
       # End to End test
       - run:
           name: End to End Test
-          command: npm run frontend:e2etest  --protractor-config=e2e/protractor-ci.conf.js
+          command: npm run frontend:e2etest  --protractor-config=e2e/protractor.conf.js
   build:
     docker:
       - image: "cimg/base:stable"
