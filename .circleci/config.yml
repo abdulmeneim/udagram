@@ -91,8 +91,8 @@ workflows:
       #           - main
       #           - master
       - build:
-          requires:
-            - test
+          # requires:
+          #   - test
           filters:
             branches:
               only:
