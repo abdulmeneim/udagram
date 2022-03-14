@@ -1,4 +1,2 @@
-eb init
-eb use Project3api-env
-eb deploy 
+eb deploy Project3api-env
 eb health
