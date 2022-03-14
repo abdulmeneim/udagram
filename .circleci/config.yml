@@ -69,14 +69,14 @@ jobs:
           name: Front-End Build
           command: |
             npm run frontend:build
-      # - run:
-      #     name: Back-End Build
-      #     command: |
-      #       npm run backend:build
       - run:
-          name: Deploying
+          name: Back-End Build
           command: |
-            eb deploy $CIRCLE_BRANCH-my-application
+            npm run backend:build
+      # - run:
+      #     name: Deploying
+      #     command: |
+      #       eb deploy $CIRCLE_BRANCH-my-application
       - run:
           name: Deploy back-end App
           command: |
