@@ -72,8 +72,7 @@ jobs:
       - run:
           name: Back-End Build
           command: |
-            eb deploy Project3api-env
-            eb health
+            npm run backend:build
       # - run:
       #     name: Deploying
       #     command: |
