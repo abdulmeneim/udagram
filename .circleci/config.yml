@@ -34,10 +34,10 @@ jobs:
       - run:
           name: Testing
           command: npm run frontend:unittest -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-      # End to End test
-      # - run:
-      #     name: End to End Test
-      #     command: npm run frontend:e2etest  --protractor-config=e2e/protractor.conf.js
+      #End to End test
+      - run:
+          name: End to End Test
+          command: npm run frontend:e2etest  --protractor-config=e2e/protractor.conf.js
   build:
     docker:
       - image: "cimg/base:stable"
@@ -67,10 +67,10 @@ jobs:
           name: Deploy back-end App
           command: |
             npm run backend:deploy
-      # - run:
-      #     name: Deploy frontend-App
-      #     command: |
-      #       npm run frontend:deploy
+      - run:
+          name: Deploy frontend-App
+          command: |
+            npm run frontend:deploy
 workflows:
   udagram:
     jobs:
